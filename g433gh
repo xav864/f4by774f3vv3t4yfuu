@@ -4683,7 +4683,7 @@ function library:CreateSettingsTab(menu)
             end
         end
         setByPreset = false
-    end}):Select('Default');
+    end}):Select('faith.dev beta');
 
     return settingsTab;
 end
