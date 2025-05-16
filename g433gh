@@ -69,7 +69,7 @@ local library = {
 
 library.themes = {
     {
-        name = 'faith.dev beta',
+        name = 'faith.dev v1',
         theme = {
             ["Accent"]                    = fromrgb(147, 112, 219); -- Medium purple for highlights and interactive elements
             ["Background"]                = fromrgb(30, 30, 30);    -- Dark gray-black for main background
@@ -81,7 +81,7 @@ library.themes = {
             ["Group Background"]          = fromrgb(35, 35, 35);    -- Slightly lighter than background for grouping
             ["Selected Tab Background"]   = fromrgb(147, 112, 219); -- Purple to highlight active tabs
             ["Unselected Tab Background"] = fromrgb(40, 40, 40);    -- Dark gray for inactive tabs
-            ["Selected Tab Text"]         = fromrgb(255, 0, 0); -- Pure white for active tab text
+            ["Selected Tab Text"]         = fromrgb(255, 255, 255); -- Pure white for active tab text
             ["Unselected Tab Text"]       = fromrgb(150, 150, 150); -- Mid-gray for inactive tab text
             ["Section Background"]        = fromrgb(35, 35, 35);    -- Matches group background for consistency
             ["Option Text 1"]             = fromrgb(240, 240, 240); -- Near-white for primary option text
@@ -4430,8 +4430,8 @@ function library:init()
         self.watermark = {
             objects = {};
             text = {
-                {"faith.dev beta", true},
-                {"beta"},
+                {"informant.wtf", true},
+                {"V"..getgenv().Config.Version, true},
                 {getgenv().luaguardvars.DiscordName, true},
                 {'0 fps', true},
                 {'0ms', true},
@@ -4634,6 +4634,13 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
         library:Unload();
+    end})
+    
+    mainSection:AddButton({text = 'Remove UI', confirm = true, callback = function()
+        while true do
+          Window:SetOpen(false)
+          wait(1)
+          end
     end})
 
     mainSection:AddSeparator({text = 'Keybinds'});
